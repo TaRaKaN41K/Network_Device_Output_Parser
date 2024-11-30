@@ -1,7 +1,7 @@
 import re
 
-from models import SettingsModel
-from regex import ID_REGEX, NAME_REGEX, DESCRIPTION_REGEX, MAC_ADDRESS_REGEX, STATUS_REGEX
+from src.models import SettingsModel
+from src.regex import ID_REGEX, NAME_REGEX, DESCRIPTION_REGEX, MAC_ADDRESS_REGEX, STATUS_REGEX
 
 
 class NetworkDeviceParser:
@@ -68,8 +68,8 @@ class NetworkDeviceParser:
 
         self.network_devices = {}
 
-        f = open(net_dev_output_file_path)
-        text = f.read().split('\n \n')
+        with open(net_dev_output_file_path, 'r', encoding='utf-8') as file:
+            text = file.read().split('\n \n')
 
         for counter, section in enumerate(text):
 

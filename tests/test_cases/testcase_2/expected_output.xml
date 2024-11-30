@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<NetworkDevices>
+	<Device>
+		<id>LAN</id>
+		<name>ether2</name>
+		<description>LAN</description>
+		<mac_address>50:00:00:31:00:01</mac_address>
+		<status>down</status>
+	</Device>
+	<Device>
+		<id>ether1</id>
+		<name>ether1</name>
+		<description>None</description>
+		<mac_address>50:00:00:31:00:00</mac_address>
+		<status>up</status>
+	</Device>
+	<Device>
+		<id>ether3</id>
+		<name>ether3</name>
+		<description>None</description>
+		<mac_address>50:00:00:31:00:02</mac_address>
+		<status>down</status>
+	</Device>
+</NetworkDevices>

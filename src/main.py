@@ -1,7 +1,7 @@
 import argparse
 
-from NetworkDeviceParser import NetworkDeviceParser
-from Serializer import Serializer
+from src.NetworkDeviceParser import NetworkDeviceParser
+from src.Serializer import Serializer
 
 
 if __name__ == '__main__':

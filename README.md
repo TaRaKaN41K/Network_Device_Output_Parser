@@ -17,7 +17,60 @@ python src/main.py -i PATH_TO_NETWORK_DEVICE_OUTPUT_FILE_TXT -o PATH_TO_RESULT_F
 
 ## Модульные тесты
 
+#### Запуск
+```commandline
+python -m unittest discover -s tests
+```
+
+Для добавления нового тест-кейса, просто добавить папку `testcase_N` с содержимым, описанным ниже
+
 Для проверки работы программы, написаны модельные тесты, которые проверяют корректность парсинга, создания объектов и сериализации.
+
+**Тест-кейсы расоложены в директории `test_cases`**
+```plantext
+
+test_cases/
+├── testcase_1/
+│   ├── expected_model.py
+│   ├── expected_output.xml
+│   ├── network_device_output.txt
+│   └── network_devices.xml
+├── testcase_2/
+│   ├── expected_model.py
+│   ├── expected_output.xml
+│   ├── network_device_output.txt
+│   └── network_devices.xml
+├── testcase_3/
+│   ├── expected_model.py
+│   ├── expected_output.xml
+│   ├── network_device_output.txt
+│   └── network_devices.xml
+├── ...
+```
+- Файл `expected_model.py` содержит ожидаемый dict (`result_model_dict`)с моделями вида:
+    ```python
+    from src.models import SettingsModel
+    
+    result_model_dict = {
+    
+        0:
+            SettingsModel(
+                id='...',
+                name='...',
+                description='...',
+                mac_address='...',
+                status='...'
+            ),
+    
+        ...
+    }
+    ```
+- Файл `expected_output.xml` - ожидаемая сериализация в .xml формат
+- Файл `network_device_output.txt` - вывод сетевого устройства _(можно, при запуске утилиты указать путь к этому файлу)_
+- Файл `network_devices.xml` - выходной файл утилиты с сериализованными моделями _(можно, при запуске утилиты сразу же указать сохранение в тест-кейс)_
+
+Каждый тест-кейс создаёт 2 тестовых случая
+
 
 ## Пример входных данных
 

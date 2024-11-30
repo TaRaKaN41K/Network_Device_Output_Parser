@@ -5,7 +5,7 @@ from dataclasses import dataclass
 class SettingsModel:
     id: str
     name: str
-    description: str
+    description: str | None
     mac_address: str
     status: str
 
