@@ -1,0 +1,5 @@
+NAME_REGEX = r'(?<![\w-])default-name="([^"]*)"'
+DESCRIPTION_REGEX = r';;; ([^"]*)\n '
+MAC_ADDRESS_REGEX = r'(?<![\w-])mac-address=([\w:]+)'
+STATUS_REGEX = r'^\s\d+\s([RSX]+)'
+ID_REGEX = r'(?<![\w-])name="([^"]*)"'
